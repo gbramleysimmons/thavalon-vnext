@@ -1,0 +1,2 @@
+C:\Users\graceb\projects\thavalon-vnext\thavalon-vnext\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\graceb\projects\thavalon-vnext\thavalon-vnext\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
