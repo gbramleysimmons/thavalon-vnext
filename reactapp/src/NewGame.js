@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Typography from '@mui/joy/Typography';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 class NewGame extends Component {
@@ -40,7 +39,7 @@ class NewGame extends Component {
 
     createGame() {
         const len = this.state.players.length;
-        if (len != 5 && len != 7 && len != 8 && len != 10) {
+        if (len !== 5 && len !== 7 && len !== 8 && len !== 10) {
             this.setState({ error: "invalid # of players" })
             console.log("Invalid # of players")
         }

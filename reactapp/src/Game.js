@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Typography from '@mui/joy/Typography';
-import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 class Game extends Component {
     constructor(props) {

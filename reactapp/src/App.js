@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { withCookies, Cookies } from 'react-cookie';
+import { withCookies } from 'react-cookie';
 import { CssVarsProvider } from '@mui/joy/styles';
 import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
-import Button from '@mui/joy/Button';
 import NewGame from './NewGame';
 import Game from './Game';
 
