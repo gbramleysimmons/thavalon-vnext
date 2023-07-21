@@ -951,11 +951,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\graceb\\projects\\thavalon-vnext\\thavalon-vnext\\webapi\\webapi.csproj",
+      "projectUniqueName": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "C:\\Users\\graceb\\projects\\thavalon-vnext\\thavalon-vnext\\webapi\\webapi.csproj",
+      "projectPath": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\webapi.csproj",
       "packagesPath": "C:\\Users\\graceb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\graceb\\projects\\thavalon-vnext\\thavalon-vnext\\webapi\\obj\\",
+      "outputPath": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

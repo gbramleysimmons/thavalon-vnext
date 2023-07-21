@@ -4,7 +4,7 @@ using Newtonsoft.Json.Converters;
 using webapi;
 using webapi.services;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions {  WebRootPath = "../reactapp/build"});
 
 // Add services to the container.
 
@@ -15,8 +15,6 @@ builder.Services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.Al
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<IGameService, GameService>();
 builder.Services.AddControllers();
-
-
 
 var app = builder.Build();
 
@@ -34,6 +32,8 @@ app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.Run();
 
+    
