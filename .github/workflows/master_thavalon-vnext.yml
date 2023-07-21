@@ -19,15 +19,15 @@ jobs:
       - name: Set up npm
         uses : actions/setup-node@v1
         with:
-		  node-version: '12.x'
-
+		  node-version: '12.x'	
+		  
       - name: npm install 
         run: npm install
         working-directory: ./reactapp
 
       - name: npm run build
-		run: npm run build
-		working-directory: ./reactapp
+	run: npm run build
+	working-directory: ./reactapp
       
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
