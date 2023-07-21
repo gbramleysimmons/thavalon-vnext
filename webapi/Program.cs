@@ -1,10 +1,6 @@
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using webapi;
 using webapi.services;
 
-var builder = WebApplication.CreateBuilder(new WebApplicationOptions {  WebRootPath = "../reactapp/build"});
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions {  WebRootPath = "./build"});
 
 // Add services to the container.
 
