@@ -16,27 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up npm
-        uses : actions/setup-node@v1
-        with:
-          node-version: '12.x'  
-
-      - name: npm install 
-        run: npm install
-        working-directory: ./reactapp
-
-      - name: npm run build
-        run: npm run build
-        working-directory: ./reactapp
-     
-      - name: move build
-        run: move .\reactapp\build .\myapp\
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '7.x'
-          include-prerelease: true
-      
       - name: Build with dotnet
         run: dotnet build --configuration Release
 

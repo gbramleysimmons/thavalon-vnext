@@ -90,3 +90,5 @@ C:\Users\graceb\projects\thavalon-vnext\webapi\obj\Debug\net7.0\refint\webapi.dl
 C:\Users\graceb\projects\thavalon-vnext\webapi\obj\Debug\net7.0\webapi.pdb
 C:\Users\graceb\projects\thavalon-vnext\webapi\obj\Debug\net7.0\webapi.genruntimeconfig.cache
 C:\Users\graceb\projects\thavalon-vnext\webapi\obj\Debug\net7.0\ref\webapi.dll
+C:\Users\graceb\projects\thavalon-vnext\webapi\bin\Debug\net7.0\build\asset-manifest.json
+C:\Users\graceb\projects\thavalon-vnext\webapi\bin\Debug\net7.0\build\manifest.json
