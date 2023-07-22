@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
-import { IconButton, List, ListItem } from '../node_modules/@mui/joy/index';
+import { IconButton, List, ListItem, FormControl } from '../node_modules/@mui/joy/index';
 import { Close } from '../node_modules/@mui/icons-material/index';
+
 class NewGame extends Component {
     constructor(props) {
         super(props);
@@ -52,6 +53,9 @@ class NewGame extends Component {
 
     getGame(evt) {
         evt.preventDefault();
+        if (this.state.gameId.length !== 4) {
+            this.setState({error: "Game ID must be 4 characters"})
+        }
         this.props.getGame(this.state.gameId);
     }
     
@@ -63,16 +67,16 @@ class NewGame extends Component {
 
         return (
             <div>
-                {this.state.ready ?  <div> 
-                    <form onSubmit={(event) => this.addPlayer(event)}> <Input size="md" sx={{ width: "300px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> </form>
+                {this.state.ready ? <div>
+                    <FormControl onSubmit={(event) => this.addPlayer(event)}> <Input size="md" sx={{ width: "300px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> </FormControl>
 
                     <List>{players}</List>
-                    <Button onClick={() => this.createGame()} sx={{margin: "10px"}}> Create Game </Button>
+                    <Button onClick={() => this.createGame()} sx={{ margin: "10px", width: "100px" }}> Create Game </Button>
 
-                    <form onSubmit={(event) => this.getGame(event)}>
-                        <Input size="md" sx={{ width: "300px", margin: "10px" }} value={this.state.gameId} onChange={(evt) => this.updateGameId(evt)}></Input>
-
-                    </form>
+                    <FormControl onSubmit={(event) => this.getGame(event)}>
+                        <Input size="md" sx={{ width: "300px", margin: "10px" }} placeholder="Enter a game ID"  value={this.state.gameId} onChange={(evt) => this.updateGameId(evt)}></Input>
+                        <Button type='submit' sx={{ margin: "10px", width: "100px" }} size="sm"> Join Game </Button>
+                    </FormControl>
 
                     {this.state.error}
                 </div> 
