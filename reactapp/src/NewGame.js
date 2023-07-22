@@ -69,7 +69,7 @@ class NewGame extends Component {
         return (
             <div>
                 {this.state.ready ? <div>
-                    <form id="form1" onSubmit={(event) => this.addPlayer(event)} sx={{display: "flex", flexDirection:"row"} }> <Input size="md" sx={{ width: "280px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> <IconButton type='submit'><KeyboardReturn/></IconButton></form>
+                    <form id="form1" onSubmit={(event) => this.addPlayer(event)} style={{display: "flex", flexDirection:"row"} }> <Input size="md" sx={{ width: "250px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> <IconButton type='submit'><KeyboardReturn/></IconButton></form>
 
                     <List>{players}</List>
 
