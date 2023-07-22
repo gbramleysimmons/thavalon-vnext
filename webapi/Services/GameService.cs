@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.Caching;
+using System.Security.Cryptography.X509Certificates;
 
 namespace webapi.services;
 
@@ -17,7 +18,7 @@ public class GameService : IGameService
     {
         { 5, new Ratio { NumGood = 3, NumEvil = 2, PossibleGood = 6 } },
         { 7, new Ratio { NumGood = 4, NumEvil = 3, PossibleGood = 8 } },
-        { 8, new Ratio { NumGood = 4, NumEvil = 8, PossibleGood = 8 } },
+        { 8, new Ratio { NumGood = 5, NumEvil = 3, PossibleGood = 8 } },
         { 10, new Ratio { NumGood = 6, NumEvil = 4, PossibleGood = 8} }
     };
     private IMemoryCache _cache;
@@ -30,7 +31,7 @@ public class GameService : IGameService
 
     public Game CreateGame(List<string> players)
     {
-        var gameId = Guid.NewGuid().ToString().Substring(25);
+        var gameId = GenerateGameId();
         var game = new Game() { GameId = gameId, Roles = new Dictionary<string, Role>()};
         Console.WriteLine(gameId);
         var ratio = _gameRatios.GetValueOrDefault(players.Count, null);
@@ -61,7 +62,8 @@ public class GameService : IGameService
 
         if (roleMap.ContainsKey(RoleName.Oberon))
         {
-            var target = goodRoles.Where(x => x.RoleName != RoleName.Lancelot).ToList().GetRandomValue();
+            var target = goodRoles.Where(x => x.RoleName != RoleName.Lancelot && x.RoleName != RoleName.Titania).ToList().GetRandomValue();
+            target.IsFalsified = true;
             roleMap[RoleName.Oberon].Information.Add("You have added false information to one good player.");
         }
         if (roleMap.ContainsKey(RoleName.Mordred))
@@ -131,12 +133,11 @@ public class GameService : IGameService
                     sees.Add(role.PlayerName);
                 }
 
-                if (percivaleRole.IsFalsified)
-                {
-                    sees.Add(roles.Where(x => !sees.Contains(x.PlayerName)).ToList().GetRandomValue().PlayerName);
-                    percivaleRole.Information.Add("You have been Oberoned!");
-                }
-
+            }
+            if (percivaleRole.IsFalsified)
+            {
+                sees.Add(roles.Where(x => !sees.Contains(x.PlayerName)).ToList().GetRandomValue().PlayerName);
+                percivaleRole.Information.Add("You have been Oberoned!");
             }
             percivaleRole.Information.Add($"You see the following players as Merlin or Morgana: {String.Join(',', sees)}");
         }
@@ -217,7 +218,7 @@ public class GameService : IGameService
             }
         }
         _cache.Set(gameId, game);
-
+        game.Roles.OrderBy(ele => rand.Next());
         return game;
 
     }
@@ -309,6 +310,18 @@ public class GameService : IGameService
             possibleEvil.RemoveAt(i);
         }
         return evilRoles;
+    }
+
+    private string GenerateGameId()
+    {
+        var validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+        var rand = new Random();
+        var id = "";
+        for (int i = 0; i < 4; i++)
+        {
+            id += validChars[rand.Next(validChars.Length)];
+        }
+        return id;
     }
 }
 

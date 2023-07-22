@@ -30,7 +30,7 @@ class App extends Component {
                 <h2>Players</h2>
                 <ul>
                     {
-                        Object.entries(game.roles).map(([key, value]) => {
+                        Object.entries(game.roles).sort(() => Math.random() - 0.5).map(([key, value]) => {
                             return <li>{value.roleName} | {value.alignment} | {value.playerName} | {value.information.map(ele => ele + "|")}</li>
                         })
                     }
@@ -42,9 +42,11 @@ class App extends Component {
     render() {
         return (
             <CssVarsProvider>
-                <Sheet>
+                <Sheet sx={{ margin: "auto" , width: "90%", height: "90%", display: "flex", padding: "10px", flexDirection: "column"}} variant="outlined">
                     <Typography level="h4" component="h1"> Thavalon</Typography>
+                    <div> 
                     {this.state.game ? <Game game={this.state.game} exitGame={this.exitGame} /> : <NewGame createGame={(players) => this.createGame(players)} getGame={(gameId) => this.getGame(gameId)} />}
+                </div>
                 </Sheet>
             </CssVarsProvider>
         );
