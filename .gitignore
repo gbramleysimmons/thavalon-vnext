@@ -1,2 +1,3 @@
 ~/webroot
-*/webroot
+webapi/webroot
+webapi/webroot/*

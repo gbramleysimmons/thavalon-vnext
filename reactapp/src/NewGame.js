@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import { IconButton, List, ListItem, FormControl } from '../node_modules/@mui/joy/index';
-import { Close } from '../node_modules/@mui/icons-material/index';
+import { Close, KeyboardReturn } from '../node_modules/@mui/icons-material/index';
 
 class NewGame extends Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class NewGame extends Component {
 
     addPlayer(event)  {
         event.preventDefault();
+        console.log('here');
         let player = this.state.playerFieldValue;
         let newState = this.state.players;
         newState.push(player);
@@ -68,9 +69,10 @@ class NewGame extends Component {
         return (
             <div>
                 {this.state.ready ? <div>
-                    <FormControl onSubmit={(event) => this.addPlayer(event)}> <Input size="md" sx={{ width: "300px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> </FormControl>
+                    <form id="form1" onSubmit={(event) => this.addPlayer(event)} sx={{display: "flex", flexDirection:"row"} }> <Input size="md" sx={{ width: "280px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> <IconButton type='submit'><KeyboardReturn/></IconButton></form>
 
                     <List>{players}</List>
+
                     <Button onClick={() => this.createGame()} sx={{ margin: "10px", width: "100px" }}> Create Game </Button>
 
                     <FormControl onSubmit={(event) => this.getGame(event)}>
