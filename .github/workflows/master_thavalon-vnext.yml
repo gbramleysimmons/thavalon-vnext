@@ -20,8 +20,8 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish webapi -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        working-directory: ./webapi
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
