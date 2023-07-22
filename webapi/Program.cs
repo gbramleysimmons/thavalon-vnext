@@ -1,6 +1,6 @@
 using webapi.services;
 
-var builder = WebApplication.CreateBuilder(new WebApplicationOptions {  WebRootPath = "./build"});
+var builder = WebApplication.CreateBuilder();
 
 // Add services to the container.
 

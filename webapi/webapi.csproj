@@ -17,4 +17,19 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\logo192.png" />
+    <None Include="wwwroot\logo512.png" />
+    <None Include="wwwroot\robots.txt" />
+    <None Include="wwwroot\static\css\main.e6c13ad2.css" />
+    <None Include="wwwroot\static\css\main.e6c13ad2.css.map" />
+    <None Include="wwwroot\static\js\787.5480e000.chunk.js" />
+    <None Include="wwwroot\static\js\787.5480e000.chunk.js.map" />
+    <None Include="wwwroot\static\js\main.c641f6be.js" />
+    <None Include="wwwroot\static\js\main.c641f6be.js.LICENSE.txt" />
+    <None Include="wwwroot\static\js\main.c641f6be.js.map" />
+  </ItemGroup>
+
 </Project>

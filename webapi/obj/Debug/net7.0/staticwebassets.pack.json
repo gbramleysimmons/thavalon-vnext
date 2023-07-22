@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\asset-manifest.json",
+      "PackagePath": "staticwebassets\\asset-manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\logo192.png",
+      "PackagePath": "staticwebassets\\logo192.png"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\logo512.png",
+      "PackagePath": "staticwebassets\\logo512.png"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\robots.txt",
+      "PackagePath": "staticwebassets\\robots.txt"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\css\\main.e6c13ad2.css",
+      "PackagePath": "staticwebassets\\static\\css\\main.e6c13ad2.css"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\css\\main.e6c13ad2.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\main.e6c13ad2.css.map"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\js\\787.5480e000.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\787.5480e000.chunk.js"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\js\\787.5480e000.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\787.5480e000.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\js\\main.c641f6be.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.c641f6be.js"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\js\\main.c641f6be.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.c641f6be.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\graceb\\projects\\thavalon-vnext\\webapi\\wwwroot\\static\\js\\main.c641f6be.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.c641f6be.js.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.webapi.props",
+      "PackagePath": "build\\webapi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.webapi.props",
+      "PackagePath": "buildMultiTargeting\\webapi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.webapi.props",
+      "PackagePath": "buildTransitive\\webapi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.webapi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
