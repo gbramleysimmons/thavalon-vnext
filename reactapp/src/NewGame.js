@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
+import { IconButton, List, ListItem } from '../node_modules/@mui/joy/index';
+import { Close } from '../node_modules/@mui/icons-material/index';
 class NewGame extends Component {
     constructor(props) {
         super(props);
@@ -55,17 +57,23 @@ class NewGame extends Component {
     
 
     render() {
-        let players = this.state.players.map(player => <li> {player} <button onClick={() => this.removePlayer(player)}>X</button></li>);
+        let players = this.state.players.map(player => <ListItem> {player} <IconButton color='danger' sx={{ marginLeft: "10px" }} onClick={() => this.removePlayer(player)}>
+            <Close />
+        </IconButton></ListItem>);
 
         return (
             <div>
                 {this.state.ready ?  <div> 
-                    <form onSubmit={(event) => this.addPlayer(event)}> <Input value={this.state.playerFieldValue} onChange={(evt) => this.updateInputValue(evt)}></Input> </form>
-                    
-                    <ul>{players}</ul>
-                    <Button onClick={() => this.createGame()}> Go! </Button>
+                    <form onSubmit={(event) => this.addPlayer(event)}> <Input size="md" sx={{ width: "300px", marginLeft: "10px" }} value={this.state.playerFieldValue} placeholder="Enter player's names one at a time" onChange={(evt) => this.updateInputValue(evt)}></Input> </form>
 
-                    <form onSubmit={(event) => this.getGame(event)}> <Input value={this.state.gameId} onChange={(evt) => this.updateGameId(evt)}></Input> </form>
+                    <List>{players}</List>
+                    <Button onClick={() => this.createGame()} sx={{margin: "10px"}}> Create Game </Button>
+
+                    <form onSubmit={(event) => this.getGame(event)}>
+                        <Input size="md" sx={{ width: "300px", margin: "10px" }} value={this.state.gameId} onChange={(evt) => this.updateGameId(evt)}></Input>
+
+                    </form>
+
                     {this.state.error}
                 </div> 
                  : <div> Loading... </div>}

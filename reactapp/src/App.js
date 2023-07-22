@@ -42,7 +42,7 @@ class App extends Component {
     render() {
         return (
             <CssVarsProvider>
-                <Sheet sx={{ margin: "auto" , width: "90%", height: "90%", display: "flex", padding: "10px", flexDirection: "column"}} variant="outlined">
+                <Sheet sx={{ margin: "auto" , width: "90vw", height: "90vw", display: "flex", padding: "10px", flexDirection: "column"}} >
                     <Typography level="h4" component="h1"> Thavalon</Typography>
                     <div> 
                     {this.state.game ? <Game game={this.state.game} exitGame={this.exitGame} /> : <NewGame createGame={(players) => this.createGame(players)} getGame={(gameId) => this.getGame(gameId)} />}
@@ -78,10 +78,14 @@ class App extends Component {
 
     async getGame(gameId) {
         console.log("Get Game: GameId " + gameId)
-        const response = await fetch("/"+ gameId, { method: 'GET' })
-        const data = await response.json();
-        console.log(data);
-        this.setState({ game: data, loading: false });
+        try {
+            const response = await fetch("/" + gameId, { method: 'GET' })
+            const data = await response.json();
+            console.log(data);
+            this.setState({ game: data, loading: false });
+        } catch {
+            this.clearCookies();
+        }
     }
 
     clearCookies() {
