@@ -30,7 +30,8 @@ jobs:
         working-directory: ./reactapp
      
       - name: move build
-        run: move .\reactapp\build .\myapp\
+        run: move .\reactapp\build .\webapi
+        
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
