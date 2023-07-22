@@ -26,7 +26,7 @@ class Game extends Component {
     renderRole(playerInfo) {
         console.log(playerInfo);
         return <div>
-            <Typography>You are {playerInfo.roleName}. You are on the {playerInfo.alignment} team. </Typography> You have the following information: {playerInfo.information.map(ele => <ListItem> {ele}</ListItem>)} </div>
+            <Typography>You are {playerInfo.roleName}. You are on the {playerInfo.alignment} team. </Typography> <Typography> You have the following information: </Typography> {playerInfo.information.map(ele => <ListItem> {ele}</ListItem>)} </div>
     }
     setSelectedPlayer(player) {
         this.setState({ selectedPlayer : player })
